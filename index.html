@@ -1,9 +1,74 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Dice Roller</title>
+    <style>
+        .title {
+            text-align: center;
+            margin-top: 35px;
+            font-size: 40px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: rgb(37, 81, 162);
+        }
+
+        .container {
+            background-color: rgb(236, 239, 244);
+            height: 400px;
+            width: 400px;
+            margin-left: 430px;
+            margin-top: 50px;
+            border-radius: 18px;
+        }
+
+        .no-1 {
+            height: 200px;
+            width: 250px;
+            margin-left: 73px;
+            margin-top: 36px;
+        }
+
+        .btn {
+            height: 35px;
+            width: 150px;
+            margin-left: 125px;
+            margin-top: 60px;
+            border-radius: 16px;
+            background-color: rgb(40, 70, 126);
+            color: white;
+            border: none;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            cursor: pointer;
+            box-shadow: 2px 2px 2px gray;
+            font-size: 17px;
+            letter-spacing: 1.5px;
+        }
+
+        .btn:hover {
+            box-shadow: 2px 2px 2px gray;
+            transform: scale(1.1);
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h2 class="title">Dice Roller</h2>
+    <div class="container"> <img src="icon-71.png" alt="71no-icon" class="no-1" id="num">
+        <button type="button" onclick="rollDice()" class="btn">Roll Dice</button>
+    </div>
+
+    <script>
+        const diceImg = document.getElementById("num");
+        function rollDice() {
+            const min = 1;
+            const max = 6;
+            const randomNumber = Math.floor(Math.random() * (max - min)) + min;
+            if (randomNumber == 1) {
+                diceImg.src = "icon-11.png";
+            }
+            
+        }
+    </script>
 </body>
+
 </html>
